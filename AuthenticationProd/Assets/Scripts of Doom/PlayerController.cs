@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public GameObject leaderboard;
     public TextMeshProUGUI curTimeText;
 
+    public AudioSource caw;
+
     private bool isPlaying;
     
     void Awake()
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        caw.Play();
         if (other.gameObject.CompareTag("Collectable"))
         {
             collectablesPicked++;
